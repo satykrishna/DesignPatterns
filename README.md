@@ -23,3 +23,11 @@ The following design patterns are part of this project
 *	Chain of Responsibility Pattern
 *   Interpreter Pattern
 *	Iterator Pattern
+     
+
+###### Mediator Pattern
+
+This pattern provides a mediator class which normally handles all the communications between different classes and supports easy maintenance of the code by loose coupling. Mediator pattern falls under behavioral pattern category.
+
+
+
