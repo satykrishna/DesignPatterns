@@ -23,6 +23,11 @@ The following design patterns are part of this project
 *	Chain of Responsibility Pattern
 *   Interpreter Pattern
 *	Iterator Pattern
+*	Mediator Pattern
+*	Memento Pattern
+*	Observatory pattern
+*	State pattern
+
      
 
 ###### Mediator Pattern
@@ -45,4 +50,17 @@ This pattern has 3 actors
    Caretaker is responsible to restore object state from memento
    
    
+###### Observatory Pattern
 
+Observatory Pattern uses three characters. 
+
+   1. Subject
+   2. Observer
+   3. Client
+   
+   Subject is an object having methods to attach and detach Observers to a client object
+   
+
+###### State Pattern
+
+In state pattern a class behavior changes based on its state. This type of design pattern comes under behavior pattern.
