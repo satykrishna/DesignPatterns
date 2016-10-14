@@ -27,8 +27,8 @@ The following design patterns are part of this project
 *	Memento Pattern
 *	Observatory pattern
 *	State pattern
-
-     
+*	NullObject pattern
+*	Strategy Pattern
 
 ###### Mediator Pattern
 
@@ -64,3 +64,16 @@ Observatory Pattern uses three characters.
 ###### State Pattern
 
 In state pattern a class behavior changes based on its state. This type of design pattern comes under behavior pattern.
+
+###### Null Object Pattern
+
+In Null Pattern, instead of returning a default null value for a non existing object, we return a default Object
+
+###### Strategy Pattern
+
+In strategy pattern a class behavior or its algorithm can be changed at run time. 
+This type of design pattern comes under behavior pattern
+
+###### Template Pattern
+
+In this pattern, an abstract class exposes defined ways or templates to execute its methods. Its subclasses can override the method implementation as per need but the invocation is to be in the same way as defined by an abstract class. This pattern comes under pattern category.
