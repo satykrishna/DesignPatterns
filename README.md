@@ -29,6 +29,7 @@ The following design patterns are part of this project
 *	State pattern
 *	NullObject pattern
 *	Strategy Pattern
+*	Visitor Pattern
 
 ###### Mediator Pattern
 
@@ -77,3 +78,23 @@ This type of design pattern comes under behavior pattern
 ###### Template Pattern
 
 In this pattern, an abstract class exposes defined ways or templates to execute its methods. Its subclasses can override the method implementation as per need but the invocation is to be in the same way as defined by an abstract class. This pattern comes under pattern category.
+
+
+###### Visitor Pattern
+
+In Visitor pattern, we use a visitor class which changes the executing algorithm of an element class. By this way, execution algorithm of element can vary as and when visitor varies. This pattern comes under behavior pattern category. As per the pattern, element object has to accept the visitor object so that visitor object handles the operation on the element object. 
+
+###### MVC Pattern
+
+MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to separate application's concerns.
+
+    Model - Model represents an object or JAVA POJO carrying data. It can also have logic to update controller if its data changes.
+
+    View - View represents the visualization of the data that model contains.
+
+    Controller - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.
+    
+    
+  
+
+ 
