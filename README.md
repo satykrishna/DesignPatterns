@@ -30,6 +30,9 @@ The following design patterns are part of this project
 *	NullObject pattern
 *	Strategy Pattern
 *	Visitor Pattern
+*	MVC pattern
+*	Business Delegate Pattern
+*	Composite Entity Pattern
 
 ###### Mediator Pattern
 
@@ -94,7 +97,32 @@ MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to se
 
     Controller - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate.
     
-    
-  
+###### Business Pattern
 
- 
+Business Delegate Pattern is used to decouple presentation tier and business tier. It is basically use to reduce communication or remote lookup functionality to business tier code in presentation tier code. In business tier we have following entities.
+
+`
+
+    Client - Presentation tier code may be JSP, servlet or UI java code.
+
+    Business Delegate - A single entry point class for client entities to provide access to Business Service methods.
+
+    LookUp Service - Lookup service object is responsible to get relative business implementation and provide business object access to business delegate object.
+
+    Business Service - Business Service interface. Concrete classes implement this business service to provide actual business implementation logic.
+`    
+
+###### Composite Pattern
+
+Composite Entity pattern is used in EJB persistence mechanism. A Composite entity is an EJB entity bean which represents a graph of objects. When a composite entity is updated, internally dependent objects beans get updated automatically as being managed by EJB entity bean. Following are the participants in Composite Entity Bean.
+
+
+
+    Composite Entity - It is primary entity bean. It can be coarse grained or can contain a coarse grained object to be used for persistence purpose.
+
+    Coarse-Grained Object - This object contains dependent objects. It has its own life cycle and also manages life cycle of dependent objects.
+
+    Dependent Object - Dependent object is an object which depends on coarse grained object for its persistence lifecycle.
+
+    Strategies - Strategies represents how to implement a Composite Entity.
+
