@@ -37,7 +37,7 @@ The following design patterns are part of this project
 *  	The Front Controller Design Pattern
 *	Interceptor Filtering Pattern
 *	Transfer Object Pattern
-###### Mediator Pattern
+*	 Mediator Pattern
 
 This pattern provides a mediator class which normally handles all the communications between different classes and supports easy maintenance of the code by loose coupling. Mediator pattern falls under behavioral pattern category.
 
