@@ -33,6 +33,9 @@ The following design patterns are part of this project
 *	MVC pattern
 *	Business Delegate Pattern
 *	Composite Entity Pattern
+*	Data Access Object Pattern
+*  	The Front Controller Design Pattern
+*	Interceptor Filtering Pattern
 
 ###### Mediator Pattern
 
@@ -101,7 +104,6 @@ MVC Pattern stands for Model-View-Controller Pattern. This pattern is used to se
 
 Business Delegate Pattern is used to decouple presentation tier and business tier. It is basically use to reduce communication or remote lookup functionality to business tier code in presentation tier code. In business tier we have following entities.
 
-`
 
     Client - Presentation tier code may be JSP, servlet or UI java code.
 
@@ -110,7 +112,6 @@ Business Delegate Pattern is used to decouple presentation tier and business tie
     LookUp Service - Lookup service object is responsible to get relative business implementation and provide business object access to business delegate object.
 
     Business Service - Business Service interface. Concrete classes implement this business service to provide actual business implementation logic.
-`    
 
 ###### Composite Pattern
 
@@ -125,4 +126,41 @@ Composite Entity pattern is used in EJB persistence mechanism. A Composite entit
     Dependent Object - Dependent object is an object which depends on coarse grained object for its persistence lifecycle.
 
     Strategies - Strategies represents how to implement a Composite Entity.
+
+###### DataAccess Object Pattern
+
+Data Access Object Pattern or DAO pattern is used to separate low level data accessing API or operations from high level business services. Following are the participants in Data Access Object Pattern.
+
+    Data Access Object Interface - This interface defines the standard operations to be performed on a model object(s).
+
+    Data Access Object concrete class - This class implements above interface. This class is responsible to get data from a data source which can be database / xml or any other storage mechanism.
+
+    Model Object or Value Object - This object is simple POJO containing get/set methods to store data retrieved using DAO class.
+    
+###### The Front Controller Design Pattern
+
+The front controller is used to provide a centralized request handling mechanism so that all the requests will be handled by a single handler. This handler can do the authentication or authorization or logging or tracking of request and then pass the requests to the corresponding handlers.
+
+`following are the entities of this design pattern`
+
+Following are the entities of this type of design pattern.
+
+    Front Controller - Single handler for all kinds of requests coming to the application (either web based/ desktop based).
+
+    Dispatcher - Front Controller may use a dispatcher object which can dispatch the request to corresponding specific handler.
+
+    View - Views are the object for which the requests are made.
+
+###### Intercepter Filter Pattern
+The intercepting filter design pattern is used when we want to do some pre-processing / post-processing with request or response of the application. Filters are defined and applied on the request before passing the request to actual target application. Filters can do the authentication/ authorization/ logging or tracking of request and then pass the requests to corresponding handlers. Following are the entities of this type of design pattern.
+
+    Filter - Filter which will performs certain task prior or after execution of request by request handler.
+
+    Filter Chain - Filter Chain carries multiple filters and help to execute them in defined order on target.
+
+    Target - Target object is the request handler
+
+    Filter Manager - Filter Manager manages the filters and Filter Chain.
+
+    Client - Client is the object who sends request to the Target object.
 
