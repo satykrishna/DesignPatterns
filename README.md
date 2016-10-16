@@ -36,7 +36,7 @@ The following design patterns are part of this project
 *	Data Access Object Pattern
 *  	The Front Controller Design Pattern
 *	Interceptor Filtering Pattern
-
+*	Transfer Object Pattern
 ###### Mediator Pattern
 
 This pattern provides a mediator class which normally handles all the communications between different classes and supports easy maintenance of the code by loose coupling. Mediator pattern falls under behavioral pattern category.
@@ -163,4 +163,28 @@ The intercepting filter design pattern is used when we want to do some pre-proce
     Filter Manager - Filter Manager manages the filters and Filter Chain.
 
     Client - Client is the object who sends request to the Target object.
+
+###### Service Locator Pattern
+
+The service locator design pattern is used when we want to locate various services using JNDI lookup. Considering high cost of looking up JNDI for a service, Service Locator pattern makes use of caching technique. For the first time a service is required, Service Locator looks up in JNDI and caches the service object. Further lookup or same service via Service Locator is done in its cache which improves the performance of application to great extent. Following are the entities of this type of design pattern.
+
+`Service - Actual Service which will process the request. Reference of such service is to be looked upon in JNDI server.`
+
+`Context / Initial Context - JNDI Context carries the reference to service used for lookup purpose.`
+
+`Service Locator - Service Locator is a single point of contact to get services by JNDI lookup caching the services.`
+
+`Cache - Cache to store references of services to reuse them`
+
+`Client - Client is the object that invokes the services via ServiceLocator.`
+
+###### Transfer Object Pattern
+The Transfer Object pattern is used when we want to pass data with multiple attributes in one shot from client to server. Transfer object is also known as Value Object. Transfer Object is a simple POJO class having getter/setter methods and is serializable so that it can be transferred over the network. It does not have any behavior. Server Side business class normally fetches data from the database and fills the POJO and send it to the client or pass it by value. For client, transfer object is read-only. Client can create its own transfer object and pass it to server to update values in database in one shot. Following are the entities of this type of design pattern.
+
+    Business Object - Business Service fills the Transfer Object with data.
+
+    Transfer Object - Simple POJO having methods to set/get attributes only.
+
+    Client - Client either requests or sends the Transfer Object to Business Object.
+
 
